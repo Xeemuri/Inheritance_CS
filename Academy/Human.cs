@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define DEBUG
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,15 @@ namespace Academy
             LastName = lastName;
             FirstName = firstName;
             Age = age;
-            Console.WriteLine($"HConstructor:\t{GetHashCode()}");
+#if DEBUG
+            Console.WriteLine($"HConstructor:\t{GetHashCode()}"); 
+#endif
         }
         ~Human()
         {
-            Console.WriteLine($"HDestructor:\t{GetHashCode()}");
+#if DEBUG
+            Console.WriteLine($"HDestructor:\t{GetHashCode()}"); 
+#endif
         }
 
         //              Methods:
