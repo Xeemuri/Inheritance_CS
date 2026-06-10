@@ -6,31 +6,36 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-    internal class Teacher : AcademyMember
+    class Teacher : AcademyMember
     {
         public int Experience { get; set; }
 
-        // Constructors:
+        //			Constructors:
         public Teacher
-            (
-                string lastName, string firstName, int age,
-                string speciality, int experience
-            ) : base(lastName, firstName, age, speciality)
+        (
+            string lastName, string firstName, int age,
+            string speciality, int experience
+        ) : base(lastName, firstName, age, speciality)
         {
-            Experience = experience;
+            this.Experience = experience;
 #if DEBUG
-            Console.WriteLine($"TConstructor:\t{GetHashCode()}"); 
+			Console.WriteLine($"TConstructor:\t{GetHashCode()}"); 
 #endif
         }
         ~Teacher()
         {
 #if DEBUG
-            Console.WriteLine($"TDestructor:\t{GetHashCode()}"); 
+			Console.WriteLine($"TDestructor:\t{GetHashCode()}"); 
 #endif
         }
+
         public override string ToString()
         {
-            return base.ToString() + $"  {Experience}";
+            return base.ToString() + $"{Experience.ToString().PadLeft(3).PadRight(4)}";
+        }
+        public override string ToFileString()
+        {
+            return base.ToFileString() + $",{Experience}";
         }
     }
 }

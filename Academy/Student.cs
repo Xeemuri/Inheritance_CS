@@ -1,5 +1,4 @@
-﻿#define DEBUG
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,33 +6,57 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-    internal class Student : AcademyMember
+    class Student : AcademyMember
     {
         public string Group { get; set; }
         public double Rating { get; set; }
         public double Attendance { get; set; }
         public Student
-            (
+        (
             string lastName, string firstName, int age,
             string speciality, string group, double rating, double attendance
-            ) : base(lastName, firstName, age, speciality)
+        ) : base(lastName, firstName, age, speciality)
         {
             Group = group;
             Rating = rating;
             Attendance = attendance;
 #if DEBUG
-            Console.WriteLine($"SConstructor:\t{GetHashCode()}"); 
+			Console.WriteLine($"SConstructor:\t{GetHashCode()}"); 
 #endif
+        }
+        public Student(Student other) : base(other)
+        {
+            this.Group = other.Group;
+            this.Rating = other.Rating;
+            this.Attendance = other.Attendance;
+        }
+        public Student
+        (
+            Human human,
+            string speciality,
+            string group, double rating, double attendance
+        ) : base(human, speciality)
+        {
+            this.Group = group;
+            this.Rating = rating;
+            this.Attendance = attendance;
         }
         ~Student()
         {
-#if DEBUG
-            Console.WriteLine($"SDestructor:\t{GetHashCode()}");
+#if DEUBG
+			Console.WriteLine($"SDestructor:\t{GetHashCode()}"); 
 #endif
         }
+
         public override string ToString()
         {
-            return $"{base.ToString()} {Group} {Rating} {Attendance}";
+            return
+                base.ToString() +
+                $"{Group.PadRight(8)}{Rating.ToString().PadLeft(8)}{Attendance.ToString().PadLeft(8)}";
+        }
+        public override string ToFileString()
+        {
+            return base.ToFileString() + $",{Group},{Rating},{Attendance}";
         }
     }
 }
