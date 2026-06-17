@@ -58,7 +58,7 @@ namespace Academy
             Human[] group = new Human[]
                {
                 new Student("Vercetty", "Tommy", 30, "Auto", "Vice", 91, 98),
-                new Teacher("Diaz", "Ricardo", 45, "Weapons distribution", 20),
+				new Teacher("Diaz", "Ricardo", 45, "Weapons distribution", 20),
                 new Graduate("Rosenberg", "Ken", 35, "Law", "Vice", 32, 25, "How to make money"),
                 new Teacher("Colonel", "Cortez", 50, "Weapons distribution", 25)
                };

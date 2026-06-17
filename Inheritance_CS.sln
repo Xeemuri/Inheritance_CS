@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37111.16 d17.14
+VisualStudioVersion = 17.14.37111.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy", "Academy\Academy.csproj", "{C81B1C6D-3944-4633-B414-979523BC14CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractGeometry", "AbstractGeometry\AbstractGeometry.csproj", "{A5124685-30A3-4DAC-AB50-264CD1B012F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C81B1C6D-3944-4633-B414-979523BC14CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81B1C6D-3944-4633-B414-979523BC14CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C81B1C6D-3944-4633-B414-979523BC14CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5124685-30A3-4DAC-AB50-264CD1B012F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5124685-30A3-4DAC-AB50-264CD1B012F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5124685-30A3-4DAC-AB50-264CD1B012F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5124685-30A3-4DAC-AB50-264CD1B012F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
