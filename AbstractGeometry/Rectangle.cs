@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AbstractGeometry
 {
-    internal class Rectangle: Shape
+    internal class Rectangle: Shape, IHaveDiagonal
     {
         public double Width { get; set; }
         public double Height { get; set; }
@@ -22,6 +22,16 @@ namespace AbstractGeometry
             Width = width;
             Height = height;
         }
+        public double GetDiagonal()
+        {
+            return Math.Sqrt(Width*Width + Height * Height);
+        }
+        public void DrawDiagonal(PaintEventArgs e)
+        {
+            Pen pen =new Pen(Color,1);
+            e.Graphics.DrawLine(pen, StartX, StartY, StartX+(float)Width, StartY+(float)Height);
+            base.Info(e);
+        }
         public override double GetArea()
         {
             return Width * Height;
@@ -32,14 +42,15 @@ namespace AbstractGeometry
         }
         public override void Draw(PaintEventArgs e)
         {
-            Console.WriteLine("Нужно нарисовать прямоугольник");
             Pen pen = new Pen(Color, LineWidth);
-            e.Graphics.DrawRectangle(pen, StartX, StartY, (float)Width, (float)Height);
+            e.Graphics.DrawRectangle(pen, StartX, StartY, (float)Width, (float)Height); 
         }
         public override void Info(PaintEventArgs e)
         {
             Console.WriteLine($"Ширина прямоугольника: {Width}");
             Console.WriteLine($"Высота прямоугольника: {Height}");
+            Console.WriteLine($"Диагональ прямоугольника: {GetDiagonal()}");
+            DrawDiagonal(e);
             base.Info(e);
         }
     }

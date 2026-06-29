@@ -27,7 +27,6 @@ namespace AbstractGeometry
         }
         public override void Draw(System.Windows.Forms.PaintEventArgs e)
         {
-            Console.WriteLine("Нужно нарисовать квадрат");
             System.Drawing.Pen pen = new System.Drawing.Pen(Color, LineWidth);
             e.Graphics.DrawRectangle(pen, StartX, StartY, (float)Side, (float)Side);
         }

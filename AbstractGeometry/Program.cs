@@ -30,7 +30,7 @@ namespace AbstractGeometry
             Square square = new Square(100, 300, 300, 1, Color.Green);
             square.Info(e);
 
-            Circle circle = new Circle(100, 300, 300, 4, Color.Blue);
+            Circle circle = new Circle(200, 500, 300, 4, Color.Blue);
             circle.Info(e);
         }
         [DllImport("kernel32.dll")]
